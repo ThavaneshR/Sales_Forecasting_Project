@@ -11,7 +11,6 @@ pickel_in=open("TSAmodel.pkl","rb")
 model=pickle.load(pickel_in)
 def predict_sales(date):
     prediction=model.predict(start='1972-09-01',end=date,dynamic=True)
-    prediction.plot(figsize=(12, 8))
     print(prediction[-1])
     return prediction
 st.title("Sales Prediction")
